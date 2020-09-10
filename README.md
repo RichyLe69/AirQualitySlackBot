@@ -22,6 +22,8 @@ Retrieve live Air Quality Index (AQI) data from breezometer and posts it to conf
 
 # Example 
 
-![Alt Text]()
-![Alt Text]()
-![Alt Text]()
+![Alt Text](https://raw.githubusercontent.com/richardle17/AirQualitySlackBot/master/demo/aqislackbot-1.jpg)
+
+![Alt Text](https://raw.githubusercontent.com/richardle17/AirQualitySlackBot/master/demo/aqislackbot-2.jpg)
+
+![Alt Text](https://raw.githubusercontent.com/richardle17/AirQualitySlackBot/master/demo/aqislackbot-0.jpg)
