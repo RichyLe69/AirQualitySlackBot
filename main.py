@@ -10,6 +10,8 @@ from slack import WebClient
 # Download the helper library from https://www.twilio.com/docs/python/install
 from twilio.rest import Client
 
+from utils import crypto_main
+
 # This `app` represents your existing Flask app
 app = Flask(__name__)
 
@@ -64,6 +66,12 @@ def handle_message(event_data):
                 query = breezometer_query(my_zip)
                 message2 = '{}, AQI: {}. \n{}. \n{}'.format(query[0], query[1], query[2], query[3])
                 slack_client.chat_postMessage(channel=channel_id, text=message2)
+            if command.split('> ')[1].split(' ')[0] == 'crypto':
+                print('crypto command')
+                crypto_symbol = (command.split('crypto ')[1])
+                response = crypto_main(crypto_symbol)
+                message = 'The price for {} is {}'.format(response[0], response[1])
+                slack_client.chat_postMessage(channel=channel_id, text=message)
             else:
                 message = 'Unknown Command. Try "@airbot aqi <zipcode>"'
                 slack_client.chat_postMessage(channel=channel_id, text=message)
